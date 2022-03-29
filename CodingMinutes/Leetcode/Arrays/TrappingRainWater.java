@@ -20,7 +20,7 @@ public class TrappingRainWater {
             }
             else{
             maxRight=Math.max(maxRight,height[j]);
-            water+=maxLeft-height[j];
+            water+=maxRight-height[j];
             j--;
             }
         }

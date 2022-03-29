@@ -2,8 +2,15 @@
 <module type="JAVA_MODULE" version="4">
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
-    <content url="file://$MODULE_DIR$">
-      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
+    <content url="file://$MODULE_DIR$/CodingMinutes">
+      <sourceFolder url="file://$MODULE_DIR$/CodingMinutes" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/CodingMinutes/ArrayProblems" isTestSource="false" packagePrefix="ArrayProblems.in" />
+    </content>
+    <content url="file://$MODULE_DIR$/DSA_ProblemSolving">
+      <sourceFolder url="file://$MODULE_DIR$/DSA_ProblemSolving/BinarySearch/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/DSA_ProblemSolving/LeetCode/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/DSA_ProblemSolving/SlidingWindow/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/DSA_ProblemSolving/StackQueue/src" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

@@ -4,7 +4,7 @@ public class Floor {
 
 	public static void main(String[] args) {
 		int[] arr = { 2, 3, 5, 9, 14, 16, 18 };
-		int target = 1;
+		int target = 15;
 		int ans = floor(arr, target);
 		System.out.println(ans);
 	}
