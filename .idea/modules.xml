@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/DSA_Problems.iml" filepath="$PROJECT_DIR$/DSA_Problems.iml" />
+      <module fileurl="file://$PROJECT_DIR$/StriverSDESheet/StriverSDESheet.iml" filepath="$PROJECT_DIR$/StriverSDESheet/StriverSDESheet.iml" />
     </modules>
   </component>
 </project>

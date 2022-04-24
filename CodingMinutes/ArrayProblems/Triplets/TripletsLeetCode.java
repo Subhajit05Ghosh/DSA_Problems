@@ -9,7 +9,7 @@ public class TripletsLeetCode {
         int arr[] = {-1, 0, 1, 2, -1, -4};
         int target = 0;
         List<List<Integer>> al=triplets(arr,target);
-        System.out.println(al);
+        System.out.println(al.toString());
     }
 
     private static List<List<Integer>> triplets(int[] arr, int target) {

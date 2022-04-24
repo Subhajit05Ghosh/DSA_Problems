@@ -6,6 +6,7 @@ public class SearchInMountain {
 	}
 
 	// https://leetcode.com/problems/find-in-mountain-array/
+	//Biotonic Array/Mountain Array
 	int search(int[] arr, int target) {
 		int peak = peakIndexInMountainArray(arr);
 		int firstTry = orderAgnosticBS(arr, target, 0, peak);

@@ -15,6 +15,7 @@ public class PairsBruteForce {
             for (int j = i; j < arr.length; j++) {
                 if (target == arr[j]) {
                     return new int[]{arr[i], arr[j]};
+                    // return new int[]{i,j};
                 }
             }
         }
