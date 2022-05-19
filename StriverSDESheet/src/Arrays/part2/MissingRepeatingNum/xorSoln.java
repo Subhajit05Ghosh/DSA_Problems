@@ -12,7 +12,7 @@ public class xorSoln {
         for (int i = 0; i < n; i++) {
             xor ^= arr[i];
         }
-        for (int i = 0; i < n; i++) {
+        for (int i = 1; i <= n; i++) {
             xor ^= i;
         }
         int rsb = xor & -xor;
@@ -23,7 +23,7 @@ public class xorSoln {
                 x = x ^ val;
             else y = y ^ val;
         }
-        for (int i = 0; i < n; i++) {
+        for (int i = 1; i <= n; i++) {
             if ((rsb & i) == 0)
                 x = x ^ i;
             else y = y ^ i;
