@@ -61,13 +61,14 @@ public class detectLoopLL {
             }
         }
         if (flag == 1)
-            System.out.println("Loop found");
+            System.out.println("Loop found ");
         else
             System.out.println("Loop not found");
     }
 
     Node detectFirstNode(Node head) {
         Node meet = detectCycle(head);
+        System.out.println("Meet point "+meet.data);
         Node start = head;
         while (start != meet) {
             start = start.next;
