@@ -1,0 +1,74 @@
+package Trees.SumTree;
+
+// Java program to convert a tree into its sum tree
+
+// A binary tree node
+class TrNode
+{
+    int data;
+    TrNode left, right;
+
+    TrNode(int item)
+    {
+        data = item;
+        left = right = null;
+    }
+}
+
+class SumtreeConversion
+{
+    TrNode root;
+
+    // Convert a given tree to a tree where every node contains sum of
+    // values of nodes in left and right subtrees in the original tree
+    int toSumTree(TrNode node)
+    {
+        // Base case
+        if (node == null)
+            return 0;
+
+        // Store the old value
+        int old_val = node.data;
+
+        // Recursively call for left and right subtrees and store the sum
+        // as new value of this node
+        node.data = toSumTree(node.left) + toSumTree(node.right);
+
+        // Return the sum of values of nodes in left and right subtrees
+        // and old_value of this node
+        return node.data + old_val;
+    }
+
+    // A utility function to print inorder traversal of a Binary Tree
+    void printInorder(TrNode node)
+    {
+        if (node == null)
+            return;
+        printInorder(node.left);
+        System.out.print(node.data + " ");
+        printInorder(node.right);
+    }
+
+    /* Driver function to test above functions */
+    public static void main(String args[])
+    {
+        SumtreeConversion tree = new SumtreeConversion();
+
+        /* Constructing tree given in the above figure */
+        tree.root = new TrNode(10);
+        tree.root.left = new TrNode(-2);
+        tree.root.right = new TrNode(6);
+        tree.root.left.left = new TrNode(8);
+        tree.root.left.right = new TrNode(-4);
+        tree.root.right.left = new TrNode(7);
+        tree.root.right.right = new TrNode(5);
+
+        tree.toSumTree(tree.root);
+
+        // Print inorder traversal of the converted tree to test result
+        // of toSumTree()
+        System.out.println("Inorder Traversal of the resultant tree is:");
+        tree.printInorder(tree.root);
+    }
+}
+
