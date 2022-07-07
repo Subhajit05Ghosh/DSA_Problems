@@ -73,12 +73,14 @@ public class IntersectionofLL {
         list.a.next.next = new Node(3);
         list.a.next.next.next = new Node(4);
         list.a.next.next.next.next = new Node(6);
+        list.printList(a);
 
         // creating second linked list
         list.b = new Node(2);
         list.b.next = new Node(4);
         list.b.next.next = new Node(6);
         list.b.next.next.next = new Node(8);
+        list.printList(b);
 
         // function call for intersection
         list.sortedIntersect();

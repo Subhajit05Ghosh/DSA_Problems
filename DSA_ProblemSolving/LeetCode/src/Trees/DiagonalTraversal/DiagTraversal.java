@@ -24,15 +24,18 @@ class DiagTraversal {
         ArrayList<ArrayList<Integer>> ans = new ArrayList<>();
         que.addLast(root);
         while (que.size() != 0) {
+            //Diagonal
             int size = que.size();
             ArrayList<Integer> smallAns = new ArrayList<>();
             while (size-- > 0) {
+                // Helps to traverse each component of particular diagonal
                 Node rn = que.removeFirst();
                 while (rn != null) {
+                    //Traverse a component
                     smallAns.add(rn.data);
                     if (rn.left != null)
                         que.addLast(rn.left);
-                    System.out.print(rn.data+" ");
+                    System.out.print(rn.data + " ");
                     rn = rn.right;
                 }
             }
@@ -55,7 +58,7 @@ class DiagTraversal {
                     smallAns.add(rn.data);
                     if (rn.left != null)
                         que.addLast(rn.left);
-                    System.out.print(rn.data+" ");
+                    System.out.print(rn.data + " ");
                     rn = rn.right;
                 }
             }
@@ -63,8 +66,6 @@ class DiagTraversal {
         }
         return smallAns;
     }
-
-
 
 
     public static void main(String[] args) {
@@ -77,7 +78,7 @@ class DiagTraversal {
         root.right.right.left = new Node(13);
         root.left.right.left = new Node(4);
         root.left.right.right = new Node(7);
-       // ArrayList<ArrayList<Integer>> am = diagonalOrder(root);
+        // ArrayList<ArrayList<Integer>> am = diagonalOrder(root);
         //System.out.println(am);
 
         ArrayList<Integer> am2 = diagonalOrder2(root);

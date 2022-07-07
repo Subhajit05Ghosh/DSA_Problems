@@ -32,7 +32,7 @@ public class Overlapping {
                 ar.add(interval);
             } else {
                 int[] prevInterval = ar.get(ar.size() - 1);
-                if (interval[0] < prevInterval[1]) {
+                if (interval[0] <= prevInterval[1]) {
                     prevInterval[1] = Math.max(interval[1], prevInterval[1]);
                 } else {
                     ar.add(interval);

@@ -36,5 +36,3 @@ public class MoveNegElm {
             System.out.print(e + " ");
     }
 }
-
-// This code is contributed by Vedant Harshit

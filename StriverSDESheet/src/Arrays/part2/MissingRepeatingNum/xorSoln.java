@@ -29,7 +29,7 @@ public class xorSoln {
             else y = y ^ i;
         }
 
-        for (int val : arr) {
+/*        for (int val : arr) {
             if (val == x) {
                 x = x ^ val;
                 System.out.println("Missing number -> " + y);
@@ -42,6 +42,18 @@ public class xorSoln {
                 break;
             }
 
+        }*/
+        for(int val:arr){
+            if(val==x){
+                System.out.println("Missing number -> " + y);
+                System.out.println("Repeating number -> " + x);
+                break;
+            }
+            else if(val==y){
+                System.out.println("Missing number -> " + x);
+                System.out.println("Repeating number -> " + y);
+                break;
+            }
         }
     }
 

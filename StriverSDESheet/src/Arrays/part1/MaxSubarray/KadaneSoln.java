@@ -1,6 +1,6 @@
 package Arrays.part1.MaxSubarray;
 
-public class KadaneSoln {
+public class  KadaneSoln {
     public static void main(String[] args) {
         int[] nums = {-2, 1, -3, 4, -1, 2, 1, -5, 4};
         int maxSum = maxSubArray(nums);

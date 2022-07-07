@@ -2,6 +2,7 @@ package Arrays.part2.DuplicateNumber;
 
 //Rotate slow pointer by one step and fast pointer by two steps.After their meeting point need to place the
 //fast pointer in first element of array, then need to move both pointers by one step.Meeting point is answer
+//value of array element<=array.length()
 public class TortoiseMethod {
     public static void main(String args[]) {
         int arr[] = {1, 3, 4, 2, 3};
