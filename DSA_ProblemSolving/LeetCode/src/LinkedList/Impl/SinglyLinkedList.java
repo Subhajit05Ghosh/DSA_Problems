@@ -1,4 +1,4 @@
-package LinkedList.SinglyLinkedListImpl;
+package LinkedList.Impl;
 
 public class SinglyLinkedList {
     private Node head;
@@ -43,7 +43,7 @@ public class SinglyLinkedList {
     }
 
     public int deleteFirst() {
-        if(head==null){
+        if (head == null) {
             System.out.println("List is Empty");
             return -1;
         }
@@ -96,18 +96,56 @@ public class SinglyLinkedList {
 
     public Node find(int value) {
         Node node = head;
-        while(node!=null){
-            if(node.val==value){
+        while (node != null) {
+            if (node.val == value) {
                 return node;
             }
-            node=node.next;
+            node = node.next;
         }
-        return node;
+        return null;
     }
 
-    public int getSize(){
+    public int getSize() {
         return size;
     }
+
+    public Node reverseListRecursive(Node head) {
+        // empty node || last node or only one node
+        if (head == null || head.next == null) {
+            return head;
+        }
+
+        Node newHead = reverseListRecursive(head.next);
+
+        head.next.next = head;
+        head.next = null;
+        return newHead;
+    }
+
+    public Node reverseBetween(Node head, int left, int right) {
+        Node curr = head;
+        Node prev = null;
+        for (int i = 0; curr != null && i < left - 1; i++) {
+            prev = curr;
+            curr = curr.next;
+        }
+        Node last = prev;
+        Node newEnd = curr;
+        for (int i = 0; curr != null & i < right - left + 1; i++) {
+            Node nextNode = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = nextNode;
+        }
+        if (last != null) {
+            last.next = prev;
+        } else {
+            head = prev;
+        }
+        newEnd.next = curr;
+        return head;
+    }
+
 
     public class Node {
         private int val;
@@ -132,11 +170,18 @@ public class SinglyLinkedList {
         sl.addLast(99);
         sl.insert(100, 3);
         sl.display();
+        System.out.println("Reverse Between");
+        sl.reverseBetween(sl.head, 2, 5);
+        sl.display();
         System.out.println(sl.deleteFirst());
         sl.display();
         System.out.println(sl.deleteLast());
         sl.display();
         System.out.println(sl.delete(3));
-        System.out.println("Size-> "+sl.getSize());
+        sl.display();
+        System.out.println("Size-> " + sl.getSize());
+        //System.out.println(sl.find(2));
+        sl.head = sl.reverseListRecursive(sl.head);
+        sl.display();
     }
 }
