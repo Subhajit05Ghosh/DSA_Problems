@@ -60,7 +60,7 @@ public class NthNodefrmEnd {
         llist.push(15);
         llist.push(35);
 
-        llist.printNthFromLast(llist.head,4);
+        llist.printNthFromLast(llist.head,2);
     }
 
 
