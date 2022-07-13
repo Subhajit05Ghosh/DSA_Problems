@@ -35,6 +35,18 @@ public class removeDupSortedLists {
         }
     }
 
+    public Node deleteDuplicates(Node head) {
+        Node temp = head;
+        while (temp != null && temp.next != null) {
+            if (temp.data == temp.next.data) {
+                temp.next = temp.next.next;
+            } else {
+                temp = temp.next;
+            }
+        }
+        return head;
+    }
+
     /* Utility functions */
 
     /* Inserts a new Node at front of the list. */
@@ -73,9 +85,11 @@ public class removeDupSortedLists {
         System.out.println("List before removal of duplicates");
         llist.printList();
 
-        llist.removeDuplicates();
+       // llist.removeDuplicates();
 
         System.out.println("List after removal of elements");
+       // llist.printList();
+        llist.deleteDuplicates(llist.head);
         llist.printList();
     }
 }
