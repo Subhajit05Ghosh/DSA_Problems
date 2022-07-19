@@ -78,8 +78,8 @@ class DiagTraversal {
         root.right.right.left = new Node(13);
         root.left.right.left = new Node(4);
         root.left.right.right = new Node(7);
-        // ArrayList<ArrayList<Integer>> am = diagonalOrder(root);
-        //System.out.println(am);
+         ArrayList<ArrayList<Integer>> am = diagonalOrder(root);
+        System.out.println(am);
 
         ArrayList<Integer> am2 = diagonalOrder2(root);
         System.out.println(am2);

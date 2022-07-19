@@ -131,12 +131,27 @@ public class BinaryTrees {
         }
     }
 
+    private static void levelOrder2(Node root) {
+        Queue<Node> q = new LinkedList<>();
+        q.add(root);
+        while (!q.isEmpty()) {
+            Node curr = q.poll();
+            System.out.print(curr.data + " ");
+            if (curr.left != null)
+                q.add(curr.left);
+            if (curr.right != null)
+                q.add(curr.right);
+        }
+
+    }
+
+    //Number of Nodes in the longest path between any 2 nodes is diameter
     public static int diameter(Node root) {
         if (root == null) {
             return 0;
         }
         int diam1 = diameter(root.left);
-        int diam2 = diameter(root.left);
+        int diam2 = diameter(root.right);
         int diam3 = height(root.left) + height(root.right) + 1;
         return Math.max(diam3, Math.max(diam1, diam2));
     }

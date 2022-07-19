@@ -11,6 +11,10 @@ public class MergeSortedLists {
         private int val;
         private Node next;
 
+        public Node(){
+
+        }
+
         public Node(int val) {
             this.val = val;
         }
@@ -20,6 +24,60 @@ public class MergeSortedLists {
             this.next = next;
         }
     }
+
+    Node mergeLinkedList(Node listA, Node listB) {
+
+        //create dummy Node
+        Node dummyNode = new Node();
+
+        Node tail = dummyNode;
+
+        //will break out of Loop
+        while (true) {
+            //check if listA is empty of traversed
+            if (listA == null) {
+                tail.next = listB;
+                break;
+            }
+            //check if listB is empty of traversed
+            if (listB == null) {
+                tail.next = listA;
+                break;
+            }
+
+      /*
+		check which listdata is lesser will be appended to
+		 tail.next
+        */
+            if (listA.val <= listB.val) {
+                tail.next = listA;
+                listA = listA.next;
+            } else {
+                tail.next = listB;
+                listB = listB.next;
+            }
+
+            //update tail
+            tail = tail.next;
+        }
+        //returning the Result List
+        return dummyNode.next;
+    } //method Ends
+
+        public Node mergeTwoLists(Node list1, Node list2) {
+            if (list1 == null)
+                return list2;
+            if(list2 == null)
+                return list1;
+            if(list1.val < list2.val){
+                list1.next = mergeTwoLists(list1.next, list2);
+                return list1;
+            }else {
+                list2.next = mergeTwoLists(list1, list2.next);
+                return list2;
+            }
+        }
+
 
     public static MergeSortedLists merge(MergeSortedLists first, MergeSortedLists second) {
         Node f = first.head;

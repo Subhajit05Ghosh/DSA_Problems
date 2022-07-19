@@ -63,6 +63,8 @@ public class BalancedTree {
         return treeHeight1(root) != -1;
     }
 
+    //For every node height(left)-height(right)<=1
+
     static int treeHeight1(Node1 root) {
         if (root == null)
             return 0;
