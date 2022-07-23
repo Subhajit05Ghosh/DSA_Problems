@@ -94,6 +94,7 @@ public class MedianBST {
             return 0;
 
         int count = counNodes(root);
+        //System.out.println(count);
         int currCount = 0;
         Node current = root, pre = null, prev = null;
 
@@ -160,11 +161,11 @@ public class MedianBST {
     public static void main(String[] args) {
 
 	/* Let us create following BST
-				50
-			/ \
-			30 70
-			/ \ / \
-		20 40 60 80 */
+			 50
+			/  \
+		   30   70
+		   /\   /\
+		 20 40 60 80 */
         Node root = null;
         root = insert(root, 50);
         insert(root, 30);
