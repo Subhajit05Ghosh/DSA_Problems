@@ -55,7 +55,7 @@ public class MedianBST {
                 // Move to its right
                 current = current.right;
             } else {
-                /* Find the inorder predecessor of current */
+                 /* Find the inorder predecessor of current */
                 pre = current.left;
 
                 while (pre.right != null &&

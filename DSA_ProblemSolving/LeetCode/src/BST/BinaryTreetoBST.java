@@ -115,9 +115,9 @@ public class BinaryTreetoBST {
 		/* Constructing tree given in the above figure
 			10
 			/ \
-			30 15
-		/	 \
-		20	 5 */
+		   30 15
+		   /	\
+		  20	 5 */
         root = newNode(10);
         root.left = newNode(30);
         root.right = newNode(15);
