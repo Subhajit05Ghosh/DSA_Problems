@@ -56,12 +56,11 @@ public class BSTcontainsDead {
 // dead end or not. min and max indicate range
 // of allowed values for current node. Initially
 // these values are full range.
-    boolean deadEnd(Node root, int min, int max)
-    {
+    boolean deadEnd(Node root, int min, int max) {
         // if the root is null or the recursion moves
         // after leaf node it will return false
         // i.e no dead end.
-        if (root==null)
+        if (root == null)
             return false;
 
         // if this occurs means dead end is present.
@@ -69,7 +68,7 @@ public class BSTcontainsDead {
             return true;
 
         // heart of the recursion lies here.
-        return deadEnd(root.left, min, root.data - 1)||
+        return deadEnd(root.left, min, root.data - 1) ||
                 deadEnd(root.right, root.data + 1, max);
     }
 
@@ -95,11 +94,11 @@ public class BSTcontainsDead {
         tree.insert(11);
         tree.insert(4);
 
-        if (tree.deadEnd(tree.root ,1 ,
+        if (tree.deadEnd(tree.root, 1,
                 Integer.MAX_VALUE) == true)
 
             System.out.println("Yes ");
         else
-            System.out.println("No " );
+            System.out.println("No ");
     }
 }
