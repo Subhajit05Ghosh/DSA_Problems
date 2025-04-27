@@ -2,12 +2,12 @@ package JavaStreamExample;
 
 import java.io.IOException;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.IntSummaryStatistics;
 import java.util.List;
 import java.util.stream.*;
-
 
 
 public class JavaStreams {
@@ -30,29 +30,29 @@ public class JavaStreams {
                 .sorted().findFirst().ifPresent(System.out::println);
 
         // 5. Stream from Array, sort, filter and print
-        String [] names= {"Zalatan","Cristiano","Messi","Neymar","Cafu","Casmero"};
-        Arrays.stream(names).filter(x->x.startsWith("C")).
+        String[] names = {"Zalatan", "Cristiano", "Messi", "Neymar", "Cafu", "Casmero"};
+        Arrays.stream(names).filter(x -> x.startsWith("C")).
                 sorted().forEach(System.out::println);
 
         // 6. average of squares of an int array
-        Arrays.stream(new int[]{1,2,3,4}).map(x->x*x)
+        Arrays.stream(new int[]{1, 2, 3, 4}).map(x -> x * x)
                 .forEach(System.out::println);
-        Arrays.stream(new int[] { 1,2,3,4 }).map(y -> y * y)
+        Arrays.stream(new int[]{1, 2, 3, 4}).map(y -> y * y)
                 .average().ifPresent(System.out::println);
 
         // 7. Stream from List, filter and print
         List<String> people = Arrays.asList("Al", "Ankit", "Brent", "Sarika", "amanda", "Hans", "Shivika", "Sarah");
         people.stream().map(String::toLowerCase)
-                .filter(x->x.startsWith("a")).forEach(System.out::println);
-
+                .filter(x -> x.startsWith("a")).forEach(System.out::println);
+        System.out.println("Working Directory = " + System.getProperty("user.dir"));
         // 8. Stream rows from text file, sort, filter, and print
-        Stream<String> bands = Files.lines(Paths.get("bands.txt"));
-        bands.sorted().filter(x -> x.length()> 13)
+        Stream<String> bands = Files.lines(Paths.get("DSA_ProblemSolving/JavaInterviewQstns/src/bands.txt"));
+        bands.sorted().filter(x -> x.length() > 13)
                 .forEach(System.out::println);
         bands.close();
 
         // 9. Stream rows from text file and save to List
-        List<String> bands2 = Files.lines(Paths.get("bands.txt"))
+        List<String> bands2 = Files.lines(Paths.get("DSA_ProblemSolving/JavaInterviewQstns/src/bands.txt"))
                 .filter(x -> x.contains("jit")).collect(Collectors.toList());
         bands2.forEach(x -> System.out.println(x));
 
