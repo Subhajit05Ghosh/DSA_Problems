@@ -1,4 +1,4 @@
-package LinkedList;
+package LinkedList.segregation;
 
 public class SegregateEvenOdd {
     Node head; // head of list
