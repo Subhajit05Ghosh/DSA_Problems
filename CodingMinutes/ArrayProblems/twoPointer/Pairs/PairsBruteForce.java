@@ -1,4 +1,4 @@
-package ArrayProblems.in.Pairs;
+package ArrayProblems.in.twoPointer.Pairs;
 
 public class PairsBruteForce {
     public static void main(String[] args) {

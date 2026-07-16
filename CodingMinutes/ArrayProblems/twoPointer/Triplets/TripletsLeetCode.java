@@ -1,4 +1,4 @@
-package ArrayProblems.in.Triplets;
+package ArrayProblems.in.twoPointer.Triplets;
 
 import java.util.ArrayList;
 import java.util.Arrays;
