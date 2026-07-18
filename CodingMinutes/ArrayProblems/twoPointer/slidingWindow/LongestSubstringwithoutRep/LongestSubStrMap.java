@@ -5,9 +5,10 @@ import java.util.Map;
 
 public class LongestSubStrMap {
     public static void main(String[] args) {
-        String str = "abcabcbb";
+        String str = "abcabcebb";
         int length = findLongestSubStr(str);
-        System.out.println("Length of longest substring without repeating characters: " + length);
+        String sub=findLongestSubString(str);
+        System.out.println("Length of longest substring: "+sub+" without repeating characters: " + length);
     }
 
     private static int findLongestSubStr(String str) {
@@ -22,5 +23,24 @@ public class LongestSubStrMap {
             maxLength = Math.max(maxLength, right - left + 1);
         }
         return maxLength;
+    }
+
+    private static String findLongestSubString(String str) {
+        int left = 0;
+        int maxLength = 0;
+        int startIndex=0;
+        Map<Character, Integer> strElm = new HashMap<>();
+        for (int right = 0; right < str.length(); right++) {
+            if (strElm.containsKey(str.charAt(right))) {
+                left = Math.max(left, strElm.get(str.charAt(right)) + 1);
+            }
+            strElm.put(str.charAt(right), right);
+            int currentLength=right-left+1;
+            if(currentLength>maxLength){
+                maxLength=currentLength;
+                startIndex=left;
+            }
+        }
+        return str.substring(startIndex,maxLength+startIndex);
     }
 }
