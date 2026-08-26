@@ -1,0 +1,28 @@
+The Executor Framework is a high-level concurrency utility introduced in Java 5 that simplifies thread management and
+task execution. Instead of creating and managing threads manually, developers can submit tasks to an executor, which handles
+thread scheduling and execution efficiently.
+
+Separates task submission from thread management.
+Improves application performance by reusing threads through thread pools.
+Provides better control over concurrent task execution and resource utilization.
+
+
+SingleThreadExecutor
+-----------------------
+Creates a thread pool with a single thread that executes tasks sequentially.
+ExecutorService executor = Executors.newSingleThreadExecutor();
+
+FixedThreadPool
+------------------------
+Creates a pool with a fixed number of threads. Excess tasks are queued until a thread becomes available.
+ExecutorService pool = Executors.newFixedThreadPool(2);
+
+CachedThreadPool
+------------------------
+Creates threads as needed and reuses idle ones. Suitable for many short-lived asynchronous tasks.
+ExecutorService pool = Executors.newCachedThreadPool();
+
+ScheduledThreadPool
+------------------------
+Executes tasks periodically or after a specified delay.
+ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);+++
