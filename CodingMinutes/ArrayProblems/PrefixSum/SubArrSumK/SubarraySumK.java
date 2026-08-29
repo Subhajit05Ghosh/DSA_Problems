@@ -1,4 +1,4 @@
-package ArrayProblems.in.PrefixSum;
+package ArrayProblems.in.PrefixSum.SubArrSumK;
 
 import java.util.HashMap;
 import java.util.Map;

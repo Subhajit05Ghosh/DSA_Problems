@@ -1,4 +1,4 @@
-package ArrayProblems.in.PrefixSum;
+package ArrayProblems.in.PrefixSum.SubArrSumK;
 
 public class SubarraySumKPositive {
     public static void main(String[] args) {

@@ -1,7 +1,4 @@
-package ArrayProblems.in.PrefixSum;
-
-import java.util.HashMap;
-import java.util.Map;
+package ArrayProblems.in.PrefixSum.SubArrSumK;
 
 public class SubarraySumKbruteForce {
     public static void main(String[] args) {
