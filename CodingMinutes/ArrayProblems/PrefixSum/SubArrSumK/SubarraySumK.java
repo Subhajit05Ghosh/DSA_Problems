@@ -2,7 +2,7 @@ package ArrayProblems.in.PrefixSum.SubArrSumK;
 
 import java.util.HashMap;
 import java.util.Map;
-
+// https://leetcode.com/problems/subarray-sum-equals-k/
 public class SubarraySumK {
     public static void main(String[] args) {
         int arr[] = {2,3,-5,5,-5,1,4};

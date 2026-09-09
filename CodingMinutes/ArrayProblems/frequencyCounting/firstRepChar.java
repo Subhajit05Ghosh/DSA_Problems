@@ -1,5 +1,5 @@
 package ArrayProblems.in.frequencyCounting;
-
+//https://leetcode.com/problems/first-letter-to-appear-twice/ LeetCode:2351
 public class firstRepChar {
     public static void main(String[] args) {
         String str = "gEEksforgEEks";

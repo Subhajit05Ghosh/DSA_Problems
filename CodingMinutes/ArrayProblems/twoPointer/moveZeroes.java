@@ -1,8 +1,8 @@
 package ArrayProblems.in.twoPointer;
 
 import java.util.Arrays;
+//https://leetcode.com/problems/move-zeroes/ LeetCode 283
 
-//nikhilLohia
 public class moveZeroes {
     public static void main(String[] args) {
         int arr[] = {1, 2, 0, 4, 0, 5, 6};

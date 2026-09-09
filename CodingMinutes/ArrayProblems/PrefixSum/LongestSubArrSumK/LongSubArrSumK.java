@@ -2,7 +2,7 @@ package ArrayProblems.in.PrefixSum.LongestSubArrSumK;
 
 import java.util.HashMap;
 import java.util.Map;
-
+//https://www.geeksforgeeks.org/problems/longest-sub-array-with-sum-k0809/1
 public class LongSubArrSumK {
     public static void main(String[] args) {
         int arr[] = {2,3,-5,5,-5,1,4};

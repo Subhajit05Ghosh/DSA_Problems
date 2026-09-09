@@ -1,5 +1,5 @@
 package ArrayProblems.in.twoPointer.slidingWindow.LongestRepCharRepl;
-
+//https://leetcode.com/problems/longest-repeating-character-replacement/  LeetCode 424
 public class LongestRepeatingReplacement {
     public static void main(String[] args) {
         String s = "AABABBA";

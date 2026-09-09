@@ -1,8 +1,9 @@
 package ArrayProblems.in.twoPointer;
-
+//https://leetcode.com/problems/valid-palindrome/
 public class ValidPalindrome {
     public static void main(String[] args) {
-        String str="A man, a plan, a canal: Panama";
+        String str1="A man, a plan, a canal: Panama";
+        String str="race a car";
         if(palindromeCheck(str)){
             System.out.println("The String is Palindrome");
         }
