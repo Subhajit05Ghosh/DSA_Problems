@@ -49,7 +49,7 @@ public class InorderTraversal {
         Stack<Node> stack = new Stack<>();
         List<Integer> result = new ArrayList<>();
         Node curr = root;
-/*        while (curr != null || !stack.isEmpty()) {
+        while (curr != null || !stack.isEmpty()) {
             while (curr != null) {
                 stack.push(curr);
                 curr = curr.left;
@@ -57,8 +57,8 @@ public class InorderTraversal {
             curr = stack.pop();
             result.add(curr.data);
             curr = curr.right;
-        }*/
-        while(true) {
+        }
+/*        while(true) {
             if (curr != null) {
                 stack.push(curr);
                 curr = curr.left;
@@ -70,7 +70,7 @@ public class InorderTraversal {
                 result.add(curr.data);
                 curr = curr.right;
             }
-        }
+        }*/
         result.stream().forEach(data -> System.out.print(data + " "));
     }
 
@@ -83,3 +83,11 @@ public class InorderTraversal {
         InorderRecursive(root.right);
     }
 }
+
+
+/**
+ * If current is not null push current element into a stack.
+ * Start moving left until you reach the leftmost node (curr=null).
+ * Pop the current element from the stack and add it in result.
+ * Move to the right side.
+ */

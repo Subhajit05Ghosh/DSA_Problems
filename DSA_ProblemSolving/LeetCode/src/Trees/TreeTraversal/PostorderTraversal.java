@@ -36,6 +36,7 @@ public class PostorderTraversal {
         int nodes[] = {1, 2, 4, -1, -1, 5, -1, -1, 3, -1, 6, -1, -1};
         BT tree = new BT();
         Node root = tree.buildTree(nodes);
+        //Left Right Root
         System.out.println("Postorder Traversal using Recursion");
         postorderRecursive(root);
         System.out.println("\nPostorder Traversal using Iteration");

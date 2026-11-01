@@ -77,6 +77,42 @@ public class ZigzagTraversal {
         return ans;
     }
 
+    static ArrayList<ArrayList<Integer>> zigZagTraverse(Node root) {
+        ArrayList<ArrayList<Integer>> ans = new ArrayList<>();
+        if (root == null) {
+            return ans;
+        }
+        Queue<Node> q = new LinkedList<>();
+        q.add(root);
+        boolean leftToRight = true;
+
+        while (!q.isEmpty()) {
+            int size = q.size();
+            ArrayList<Integer> temp = new ArrayList<>();
+
+            for (int i = 0; i < size; i++) {
+                Node curr = q.poll();
+                temp.add(curr.data);
+
+                if (curr.left != null) {
+                    q.add(curr.left);
+                }
+                if (curr.right != null) {
+                    q.add(curr.right);
+                }
+            }
+
+            if (!leftToRight) {
+                Collections.reverse(temp);
+            }
+
+            ans.add(temp);
+            leftToRight = !leftToRight;
+        }
+
+        return ans;
+    }
+
     public static void main(String[] args) {
 
         // Arraylist to store the traversal order.
@@ -99,6 +135,9 @@ public class ZigzagTraversal {
              i++) { // to print the order
             System.out.print(ans.get(i) + " ");
         }
+
+        ArrayList<ArrayList<Integer>> res = zigZagTraverse(root);
+        System.out.println(" The zig-zag result::"+res);
     }
 }
 

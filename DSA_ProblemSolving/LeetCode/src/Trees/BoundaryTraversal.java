@@ -1,87 +1,84 @@
 package Trees;
 
-/* A binary tree node has data, pointer to left child
-and a pointer to right child */
-class Node {
-    int data;
-    Node left, right;
-
-    Node(int item) {
-        data = item;
-        left = right = null;
-    }
-}
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Stack;
 
 class BoundaryTraversal {
+
+
+    static class Node {
+        int data;
+        Node left, right;
+
+        Node(int item) {
+            data = item;
+            left = right = null;
+        }
+    }
+
     Node root;
 
-    // A simple function to print leaf nodes of a binary tree
-    void printLeaves(Node node) {
+    public static List<Integer> boundaryTraversal(Node node) {
+        List<Integer> al = new ArrayList<>();
         if (node == null)
-            return;
-
-        printLeaves(node.left);
-        // Print it if it is a leaf node
-        if (node.left == null && node.right == null)
-            System.out.print(node.data + " ");
-        printLeaves(node.right);
-    }
-
-    // A function to print all left boundary nodes, except a leaf node.
-    // Print the nodes in TOP DOWN manner
-    void printBoundaryLeft(Node node) {
-        if (node == null)
-            return;
-
-        if (node.left != null) {
-            // to ensure top down order, print the node
-            // before calling itself for left subtree
-            System.out.print(node.data + " ");
-            printBoundaryLeft(node.left);
-        } else if (node.right != null) {
-            System.out.print(node.data + " ");
-            printBoundaryLeft(node.right);
-        }
-
-        // do nothing if it is a leaf node, this way we avoid
-        // duplicates in output
-    }
-
-    // A function to print all right boundary nodes, except a leaf node
-    // Print the nodes in BOTTOM UP manner
-    void printBoundaryRight(Node node) {
-        if (node == null)
-            return;
-
-        if (node.right != null) {
-            // to ensure bottom up order, first call for right
-            // subtree, then print this node
-            printBoundaryRight(node.right);
-            System.out.print(node.data + " ");
-        } else if (node.left != null) {
-            printBoundaryRight(node.left);
-            System.out.print(node.data + " ");
-        }
-        // do nothing if it is a leaf node, this way we avoid
-        // duplicates in output
-    }
-
-    // A function to do boundary traversal of a given binary tree
-    void printBoundary(Node node) {
-        if (node == null)
-            return;
-
-        System.out.print(node.data + " ");
+            return al;
+        if(!isLeaf(node))
+        al.add(node.data);
 
         // Print the left boundary in top-down manner.
-        printBoundaryLeft(node.left);
+        leftTraversal(node.left, al);
 
         // Print all leaf nodes
-        printLeaves(node.left);
-        printLeaves(node.right);
+        leafNodes(node, al);
 
         // Print the right boundary in bottom-up manner
-        printBoundaryRight(node.right);
+        rightTraversal(node.right, al);
+        return al;
+    }
+
+    private static void leafNodes(Node node, List<Integer> al) {
+        if (node == null)
+            return;
+        if (isLeaf(node)) {
+            al.add(node.data);
+            return;
+        }
+        leafNodes(node.left, al);
+        leafNodes(node.right, al);
+    }
+
+    private static void rightTraversal(Node node, List<Integer> al) {
+        Stack<Integer> stack = new Stack<Integer>();
+        while (node != null) {
+            if (!isLeaf(node)) {
+                stack.push(node.data);
+            }
+            if (node.left != null) {
+                node = node.left;
+            } else {
+                node = node.right;
+            }
+        }
+        while (!stack.isEmpty()) {
+            al.add(stack.pop());
+        }
+    }
+
+    private static void leftTraversal(Node node, List<Integer> al) {
+        while (node != null) {
+            if(!isLeaf(node))
+                al.add(node.data);
+            if (node.left != null) {
+                node = node.left;
+            } else {
+                node = node.right;
+            }
+        }
+    }
+
+    private static boolean isLeaf(Node node) {
+        return (node.left == null && node.right == null);
     }
 
     public static void main(String args[]) {
@@ -94,6 +91,7 @@ class BoundaryTraversal {
         tree.root.left.right.right = new Node(14);
         tree.root.right = new Node(22);
         tree.root.right.right = new Node(25);
-        tree.printBoundary(tree.root);
+        System.out.println(boundaryTraversal(tree.root));
     }
 }
+

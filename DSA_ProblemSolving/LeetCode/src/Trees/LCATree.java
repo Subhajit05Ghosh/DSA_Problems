@@ -20,7 +20,8 @@ public class LCATree {
     LCANode root;
 
     LCANode findLCA(int n1, int n2) {
-        return findLCA(root, n1, n2);
+        //return findLCA(root, n1, n2);
+        return findLCATree(root, n1, n2);
     }
 
     // This function returns pointer to LCA of two given
@@ -50,6 +51,28 @@ public class LCATree {
         // Otherwise check if left subtree or right subtree is LCA
         return (left_lca != null) ? left_lca : right_lca;
     }
+
+
+    LCANode findLCATree(LCANode node, int n1, int n2) {
+        // Base case
+        if (node == null||node.data == n1 || node.data == n2)
+            return node;
+
+        LCANode left_lca = findLCATree(node.left, n1, n2);
+        LCANode right_lca = findLCATree(node.right, n1, n2);
+
+        if(left_lca==null){
+            return right_lca;
+        }
+        else if(right_lca==null){
+            return left_lca;
+        }
+        else{
+            return node;
+        }
+    }
+
+
 
     /* Driver program to test above functions */
     public static void main(String args[]) {
