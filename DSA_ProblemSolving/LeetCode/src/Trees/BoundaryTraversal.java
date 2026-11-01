@@ -54,10 +54,10 @@ class BoundaryTraversal {
             if (!isLeaf(node)) {
                 stack.push(node.data);
             }
-            if (node.left != null) {
-                node = node.left;
-            } else {
+            if (node.right != null) {
                 node = node.right;
+            } else {
+                node = node.left;
             }
         }
         while (!stack.isEmpty()) {
