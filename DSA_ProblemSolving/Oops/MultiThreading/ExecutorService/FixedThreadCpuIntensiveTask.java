@@ -19,3 +19,8 @@ public class FixedThreadCpuIntensiveTask implements Runnable{
         System.out.println("Thread Name: " + Thread.currentThread().getName());
     }
 }
+
+/**
+ * In this example, we are using a fixed thread pool with a size equal to the number of available CPU cores.
+ * This is suitable for CPU-intensive tasks, as it allows us to fully utilize the available processing power without creating too many threads that could lead to context switching overhead.
+ */

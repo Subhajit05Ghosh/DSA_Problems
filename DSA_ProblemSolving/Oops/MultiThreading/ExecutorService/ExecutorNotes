@@ -6,6 +6,10 @@ Separates task submission from thread management.
 Improves application performance by reusing threads through thread pools.
 Provides better control over concurrent task execution and resource utilization.
 
+Thread Pools
+----------------------
+Thread pools are a core component of the Executor Framework. They manage a pool of worker threads
+that can execute submitted tasks concurrently.
 
 SingleThreadExecutor
 -----------------------
@@ -19,7 +23,8 @@ ExecutorService pool = Executors.newFixedThreadPool(2);
 
 CachedThreadPool
 ------------------------
-Creates threads as needed and reuses idle ones. Suitable for many short-lived asynchronous tasks.
+Creates threads as needed and reuses idle ones. Suitable for many short-lived asynchronous tasks. It uses synchronous queues that
+can hold only one task at a time, which means that if all threads are busy, new tasks will wait until a thread becomes available.
 ExecutorService pool = Executors.newCachedThreadPool();
 
 ScheduledThreadPool
